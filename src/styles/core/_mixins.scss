@@ -1,0 +1,52 @@
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin scrollbar($color) {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+
+    &:horizontal {
+      height: 4px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 8px;
+  }
+}
+
+@mixin sceleton() {
+  @keyframes shine {
+    to {
+      background-position: 100% 0, /* move highlight to right */ 0 0;
+    }
+  }
+
+  &:empty {
+    width: 100%;
+    display: block;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    $color-light;
+    background-repeat: repeat-y;
+    background-size: 50px 200px;
+    background-position: 0 0;
+    animation: shine 1s infinite;
+
+    @content;
+  }
+}

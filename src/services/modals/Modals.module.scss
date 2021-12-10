@@ -1,0 +1,61 @@
+@import "styles/core";
+
+.modals {
+  position: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  z-index: -1;
+
+  &, &__bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__bg {
+    position: absolute;
+
+    background-color: rgba(0,0,0, .3);
+
+    backface-visibility: hidden;
+    transition: opacity $time-short ease-in-out;
+    will-change: opacity;
+    opacity: 0;
+
+    z-index: 10;
+  }
+
+  &__container {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+
+    transition: transform $time-short ease-in-out;
+    will-change: transform;
+     transform: scale(0);
+
+    z-index: 11;
+  }
+
+  &_state_enter_active,
+  &_state_enter_done {
+    opacity: 1;
+    z-index: 9;
+
+    .modals__bg {
+      opacity: 1;
+    }
+    .modals__container {
+      transform: scale(1);
+    }
+  }
+  &_state_exit_active  {
+    opacity: 1;
+    z-index: 9;
+  }
+}

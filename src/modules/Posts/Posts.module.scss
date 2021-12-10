@@ -1,0 +1,24 @@
+@import "styles/core";
+
+.posts {
+  overflow: hidden;
+
+  &_state_enter {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  &_state_enter_active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform $time-short ease-in, opacity $time-short ease-in;
+  }
+  &_state_exit {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  &_state_exit_active {
+    transform: translateX(1000px);
+    opacity: 0;
+    transition: transform $time-short ease-in, opacity $time-short ease-in;
+  }
+}

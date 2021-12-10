@@ -1,0 +1,29 @@
+@import "styles/core";
+
+.nav__item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  margin-left: 8px;
+  margin-right: 8px;
+
+  border-bottom: 3px solid transparent;
+
+  font-size: $font-size3;
+  font-weight: $font-weight-bold;
+
+  &:not(&_active) {
+    cursor: pointer;
+  }
+
+  &_active {
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  transition: color ease-in-out $time-short;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

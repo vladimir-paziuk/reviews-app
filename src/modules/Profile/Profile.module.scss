@@ -1,0 +1,48 @@
+@import "styles/core";
+
+$skeleton-height: 26px;
+
+.profile {
+  display: flex;
+
+  &__main {
+    width: 240px;
+
+    &__title {
+      padding-left: 8px;
+      margin-top: 4px;
+      height: $skeleton-height;
+
+      line-height: 1.6;
+      font-size: $font-size3;
+    }
+  }
+
+  &__info {
+    width: 200px;
+
+    &__title {
+      font-size: $font-size3;
+      font-weight: 500;
+      line-height: 2;
+    }
+
+    &__content {
+      font-size: $font-size5;
+      font-weight: 500;
+    }
+
+    &__unit {}
+  }
+
+  &__main__title:empty,
+  &__info__content:empty {
+    @include sceleton {
+      height: $skeleton-height;
+    }
+  }
+
+  &__info + &__info {
+    padding-left: 28px;
+  }
+}

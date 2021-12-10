@@ -1,0 +1,24 @@
+@import "styles/core";
+
+.input {
+  width: 100%;
+  padding: 12px 8px;
+
+  min-height: 24px;
+
+  border: 2px solid $color-info;
+  border-radius: 4px;
+
+  font-size: $font-size3;
+  color: $color-dark;
+
+  resize: vertical;
+
+  @include placeholder {
+    color: $color-info;
+  }
+
+  &:active, &:focus {
+    border-color: $color-primary;
+  }
+}

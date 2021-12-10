@@ -1,0 +1,13 @@
+@import "styles/core";
+
+.reward {
+  width: 100vw;
+  max-width: 480px;
+  padding: 15%;
+
+  background-color: $color-light;
+
+  &__footer {
+    text-align: center;
+  }
+}

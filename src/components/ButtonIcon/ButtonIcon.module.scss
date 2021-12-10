@@ -1,0 +1,24 @@
+@import "styles/core";
+
+$size: 50px;
+
+.btn_icon {
+  display: inline-block;
+  cursor: pointer;
+
+  width: $size;
+  height: $size;
+
+  font-size: 32px;
+  color: $color-dark;
+
+  border: 1px solid $color-info;
+  border-radius: 50%;
+
+  transition: ease-in-out $time-short;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}

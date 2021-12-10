@@ -1,0 +1,39 @@
+@import "styles/core";
+
+$size-s: 50px;
+$size-m: 80px;
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $color-secondary;
+
+  //background-image: url("./image.png");
+  //background-size: 50%;
+  //background-repeat: no-repeat;
+  //background-position: center;
+
+  border: 1px solid $color-secondary;
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  &_size_s {
+    width: $size-s;
+    height: $size-s;
+  }
+
+  &_size_m {
+    width: $size-m;
+    height: $size-m;
+  }
+
+  &__image {
+    display: block;
+
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
